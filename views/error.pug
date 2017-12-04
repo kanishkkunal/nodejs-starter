@@ -1,6 +1,8 @@
 extends layout
 
 block content
-  h1= message
-  h2= status
-  pre.error!= stackHighlighted
+  .main.container-content
+    .text-center
+      h1= message
+      h2= status
+    pre.error!= stackHighlighted
