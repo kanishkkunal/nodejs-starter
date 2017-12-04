@@ -15,6 +15,11 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About' });
 });
 
+/* SPA on /posts */
+router.get('/posts/*', function(req, res, next) {
+  res.render('index', { title: 'VueJS Routing' });
+});
+
 /*
   API
 */

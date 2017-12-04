@@ -3,7 +3,9 @@
     Hello from Vue! Posts will be loaded below via API.
     <ul id="v-for-object" class="bare">
       <li v-for="post in posts">
-        <h2 class="h3">{{ post.title }}</h2>
+        <h2 class="h3">
+          <a :href="post.url">{{ post.title }}</a>
+        </h2>
         <p>{{ post.body }}</p>
       </li>
     </ul>
