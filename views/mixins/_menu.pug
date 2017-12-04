@@ -1,0 +1,57 @@
+mixin menu(list, classes)
+  nav(role="navigation")
+    ul(class=classes)
+      each item in list
+        +menuitem(item)
+
+mixin submenu(item)
+  if item.children
+    ul.submenu
+      each subitem in item.children
+        +menuitem(subitem)
+
+mixin menuitem(item)
+  if item.url
+    li(class=['menu-item'], class={'current-menu-item': currentPath == item.url})
+      a(href=item.url)&attributes(item.attributes)
+        if(item.icon)
+          <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+        | #{item.title}
+      +submenu(item)
+  else
+    li(class='menu-header') #{item.title}
+
+mixin horizontal-menu(list)
+  each item in list
+    if item.icon
+      a.button.button-text(href=item.url, target="_blank", title=item.title)
+        | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+    else
+      a.button.button-text(href=item.url)
+        | #{item.title}
+
+mixin social(list)
+  each item in list
+    a.button.button-text(href=item.url, target="_blank")
+      | <svg class="icon icon-#{item.icon}"><use xlink:href="#icon-#{item.icon}"></use></svg>
+      span #{item.title}
+
+
+mixin prevmenu(list, classes)
+  - var prev = ''
+  each item in list
+    if(item.url === currentPath)
+      if(prev.url)
+        span(class=classes) &larr; <a href="#{prev.url}">#{prev.title}</a>
+    else
+      - prev = item
+
+mixin nextmenu(list, classes)
+  - var found = false
+  each item in list
+    if(found === true)
+      if(item.url)
+        span(class=classes) <a href="#{item.url}">#{item.title}</a> &rarr;
+      - found = false
+    else if(item.url == currentPath)
+      - found = true

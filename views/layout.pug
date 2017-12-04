@@ -1,4 +1,5 @@
 include mixins/_meta.pug
+include mixins/_menu.pug
 
 doctype html
 html(lang='en-US')
@@ -13,6 +14,20 @@ html(lang='en-US')
     block styles
   body#top
     block header
+      header.header
+        .container-content
+          .header-left
+            a(href='/').site-branding
+              h1.title=title
+          .menu-toggle
+            input(type="checkbox")#menu-toggle
+            label(for="menu-toggle").header-right
+              span.css-icon-hamburger
+                span Toggle
+              span Menu
+            .menu-toggle-content
+              .header-right            
+                +menu(h.menu.main, 'menu')
     block content
     block footer
     block scripts
