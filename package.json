@@ -23,12 +23,15 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "axios": "^0.17.1",
     "cross-env": "^5.1.1",
     "laravel-mix": "^1.6.2",
     "mmcss": "^0.3.3",
     "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.2",
     "shx": "^0.2.2",
+    "vue": "^2.5.9",
+    "vue-router": "^3.0.1",
     "webpack": "^3.9.1"
   }
 }
