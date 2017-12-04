@@ -38,7 +38,8 @@ app.locals.pretty = app.get('env') === 'development';
 app.use((req, res, next) => {
   res.locals.h = helpers;
   res.locals.siteName = process.env.SITE_NAME;
-  res.locals.currentPath = process.env.SITE_BASE + req.path;
+  res.locals.currentPath = req.path;
+  res.locals.currentPathFull = process.env.SITE_BASE + req.path;
   next();
 });
 
