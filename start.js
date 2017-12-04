@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
+// import environmental variables from our .env file
+require('dotenv').config({ path: '.env' });
+
 /**
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('./app');
 var debug = require('debug')('myapp:server');
 var http = require('http');
 
