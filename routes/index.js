@@ -18,6 +18,6 @@ router.get('/about', function(req, res, next) {
 /*
   API
 */
-router.get('/api/feed', catchErrors(apiController.getFeed));
+router.get('/api/posts', catchErrors(apiController.getPosts));
 
 module.exports = router;
