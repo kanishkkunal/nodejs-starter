@@ -3,8 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prod:run": "node ./start.js",
-    "dev:run": "nodemon ./start.js --ignore public/"
+    "clean": "shx rm -rf public/*",
+    "prod:serve": "node ./start.js",
+    "prod:build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm-run-all clean --parallel prod:*",
+    "dev:serve": "nodemon ./start.js --ignore public/",
+    "dev:build": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev:watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "npm-run-all clean --parallel dev:*"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -17,6 +23,12 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "cross-env": "^5.1.1",
+    "laravel-mix": "^1.6.2",
+    "mmcss": "^0.3.3",
+    "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.2",
+    "shx": "^0.2.2",
+    "webpack": "^3.9.1"
   }
 }
