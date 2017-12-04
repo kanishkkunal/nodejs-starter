@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-// import environmental variables from our .env file
-require('dotenv').config({ path: '.env' });
-
 /**
  * Module dependencies.
  */
@@ -10,6 +7,7 @@ require('dotenv').config({ path: '.env' });
 var app = require('./app');
 var debug = require('debug')('myapp:server');
 var http = require('http');
+
 
 /**
  * Get port from environment and store in Express.

@@ -11,6 +11,14 @@ const errorHandlers = require('./handlers/errorHandlers');
 
 const app = express();
 
+// import environmental variables from our .env file
+if (app.get('env') === 'development') {
+  require('dotenv').config({ path: '.env.dev' });
+}
+else {
+  require('dotenv').config({ path: '.env' });
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -26,7 +34,8 @@ app.use('/statics', express.static(path.join(__dirname, 'public/statics')));
 // pass variables to our templates + all requests
 app.use((req, res, next) => {
   res.locals.h = helpers;
-  res.locals.currentPath = req.path;
+  res.locals.siteName = process.env.SITE_NAME;
+  res.locals.currentPath = process.env.SITE_BASE + req.path;
   next();
 });
 

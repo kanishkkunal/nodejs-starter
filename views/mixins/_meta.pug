@@ -1,0 +1,14 @@
+mixin titlemeta(title, sitename)
+  if title === sitename
+    title #{title}
+  else
+    title #{title} - #{sitename}  
+  if description
+    meta(name='description', content=description)
+
+mixin opengraph(title, sitename, url)
+  meta(property='og:title', content=title)
+  meta(property="og:site_name", content=sitename)
+  meta(property='og:type', content='website')
+  meta(property="og:locale", content='en_us')
+  meta(property='og:url', content=url)
