@@ -31,6 +31,9 @@ app.use(bodyParser.urlencoded({ extended: true  }));
 app.use(cookieParser());
 app.use('/statics', express.static(path.join(__dirname, 'public/statics')));
 
+// prettify html output in development
+app.locals.pretty = app.get('env') === 'development';
+
 // pass variables to our templates + all requests
 app.use((req, res, next) => {
   res.locals.h = helpers;
