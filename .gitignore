@@ -12,5 +12,8 @@ node_modules/
 # dotenv environment variables file
 .env
 
+# Lock files
+package-lock.json
+yarn.lock
 mix-manifest.json
 
