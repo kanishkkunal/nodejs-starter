@@ -30,5 +30,12 @@ html(lang='en-US')
                 +menu(h.menu.main, 'menu')
     block content
     block footer
+      footer.footer
+        .container-readable.section.text-center
+          a(href='/')
+            .h3=siteName
+          +horizontal-menu(h.menu.footer)
+          p.text-small Copyright © <a href="/">#{siteName}</a>, All rights reserved.
+
     block scripts
       script(src="/statics/js/main.js")

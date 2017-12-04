@@ -16,5 +16,8 @@ exports.menu = {
     { url: '/', title: 'Home' },
     { url: '/about', title: 'About' },
   ],
-  footer: []
+  footer: [
+    { url: '/', title: 'Home' },
+    { url: '/about', title: 'About' },
+  ]
 }
