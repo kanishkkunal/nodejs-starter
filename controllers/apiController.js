@@ -7,5 +7,11 @@ const posts = [
 exports.getPosts = async (req, res) => {
   setTimeout(function() {
     res.json(posts); 
-  }, 500);
+  }, 300);
+};
+
+exports.getPost = async (req, res) => {
+  setTimeout(function() {
+    res.json(posts[req.params.id - 1]); 
+  }, 200);
 };
