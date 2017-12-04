@@ -2,5 +2,16 @@
 @import "~mmcss/src/mm";
 
 .main {
-  min-height: 60vh;
+  min-height: 56vh;
+}
+
+
+.social-menu {
+  svg {
+    width: 32px;
+    fill: #888;
+    display: block;
+    text-align: center;
+    margin: 0 auto 0.6rem;
+  }
 }

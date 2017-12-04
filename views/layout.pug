@@ -34,7 +34,8 @@ html(lang='en-US')
         .container-readable.section.text-center
           a(href='/')
             .h3=siteName
-          +horizontal-menu(h.menu.footer)
+          .social-menu
+            +social(h.menu.social)
           p.text-small Copyright © <a href="/">#{siteName}</a>, All rights reserved.
 
     block scripts

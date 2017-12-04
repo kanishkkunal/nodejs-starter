@@ -16,6 +16,10 @@ exports.menu = {
     { url: '/', title: 'Home' },
     { url: '/about', title: 'About' },
   ],
+  social: [
+    { url: '#', title: 'Facebook', icon: 'facebook' },
+    { url: '#', title: 'Github', icon: 'github' },
+  ],
   footer: [
     { url: '/', title: 'Home' },
     { url: '/about', title: 'About' },
