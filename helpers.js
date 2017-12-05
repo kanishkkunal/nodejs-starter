@@ -11,6 +11,9 @@ exports.dump = (obj) => JSON.stringify(obj, null, 2);
 // inserting an SVG
 exports.icon = (name) => fs.readFileSync(`./resources/icons/${name}.svg`);
 
+// Uncomment and add your analytics code below
+// exports.analytics = "UA-00000000-00";
+
 exports.menu = {
   main: [
     { url: '/', title: 'Home' },

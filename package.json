@@ -6,11 +6,11 @@
     "clean": "shx rm -rf public/*",
     "prod:serve": "node ./start.js",
     "prod:build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm-run-all clean --parallel prod:*",
+    "prod": "cross-env NODE_ENV=production npm-run-all clean --parallel prod:*",
     "dev:serve": "nodemon ./start.js --ignore public/",
     "dev:build": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "dev:watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "dev": "npm-run-all clean --parallel dev:*"
+    "dev": "cross-env NODE_ENV=development npm-run-all clean --parallel dev:*"
   },
   "dependencies": {
     "body-parser": "~1.18.2",

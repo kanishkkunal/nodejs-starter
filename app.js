@@ -36,6 +36,7 @@ app.locals.pretty = app.get('env') === 'development';
 
 // pass variables to our templates + all requests
 app.use((req, res, next) => {
+  res.locals.env = app.get('env');
   res.locals.h = helpers;
   res.locals.siteName = process.env.SITE_NAME;
   res.locals.currentPath = req.path;
